@@ -1,8 +1,6 @@
 # rtabmap with realsense
 
-ros2 launch realsense2_camera rs_launch.py     enable_depth:=true     enable_color:=true     depth_module.profile:=640x480x30     rgb_camera.profile:=640x480x30     align_depth.enable:=true     initial_reset:=true
-
-ros2 launch rtabmap_launch rtabmap.launch.py     depth_topic:=/camera/camera/depth/image_rect_raw     rgb_topic:=/camera/camera/color/image_raw     camera_info_topic:=/camera/camera/color/camera_info     frame_id:=camera_link     odom_frame_id:=odom     map_frame_id:=map     approx_sync:=true     wait_for_transform:=0.2     args:="-d"
+ros2 launch realsense2_camera rs_launch.py     enable_gyro:=true     enable_accel:=true     unite_imu_method:=2     enable_depth:=true     enable_color:=true     depth_module.profile:=640x480x30     rgb_camera.profile:=640x480x30
 
 ## Debug
 

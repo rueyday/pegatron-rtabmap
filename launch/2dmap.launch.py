@@ -43,6 +43,12 @@ def generate_launch_description():
         description='Use approximate time synchronization'
     )
     
+    rviz_arg = DeclareLaunchArgument(
+        'rviz',
+        default_value='true',
+        description='Use rviz visulization'
+    )
+    
     # Find the rtabmap_launch package
     rtabmap_launch_dir = FindPackageShare('rtabmap_launch')
     
@@ -59,6 +65,7 @@ def generate_launch_description():
             'camera_info_topic': LaunchConfiguration('camera_info_topic'),
             'frame_id': LaunchConfiguration('frame_id'),
             'approx_sync': LaunchConfiguration('approx_sync'),
+            'rviz': LaunchConfiguration('rviz'),
         }.items()
     )
     
@@ -69,5 +76,6 @@ def generate_launch_description():
         camera_info_topic_arg,
         frame_id_arg,
         approx_sync_arg,
+        rviz_arg,
         rtabmap_launch
     ])
